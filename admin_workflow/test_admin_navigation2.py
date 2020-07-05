@@ -6,8 +6,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 import allure
 """
+Run single file
 py.test -v -s test_admin_navigation2.py
-
 """
 0
 class TestExecution():
