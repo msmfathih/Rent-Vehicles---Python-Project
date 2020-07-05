@@ -4,12 +4,8 @@ import pytest
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-import allure
-"""
-RUN TEST SUITE IN TERMINAL
-py.test -v -s C:\Users\fathih\PycharmProjects\PHPTravel\admin_test_suite
 
-"""
+
 
 class TestExecution():
 
@@ -22,7 +18,7 @@ class TestExecution():
         print("Maximized browser")
 
     @pytest.mark.run(order=2)
-    def test_validlogin(self):
+    def test_varifyPageURL(self):
         driver.get("http://rentvehicles.multicompetition.com/")
 
         try:
@@ -35,7 +31,7 @@ class TestExecution():
 
 
     @pytest.mark.run(order=3)
-    def test_invalidlogin(self):
+    def test_validlogin(self):
         enterEmail = driver.find_element_by_id("email")
         enterEmail.send_keys("admin@gmail.com")
         time.sleep(3)
@@ -53,6 +49,7 @@ class TestExecution():
 
     @pytest.mark.run(order=4)
     @pytest.mark.timeout(10)
+    @pytest.mark.skip(reason="not needed as per the flow")
     def test_vahiclePage_section(self):
 
         clickVehicleDropDown = driver.find_element(By.XPATH, "//p[contains(text(),'Vehicles')]")
@@ -89,8 +86,6 @@ class TestExecution():
         performSubmitBtn = driver.find_element_by_xpath("//button[@class='btn btn-primary btn-submit']")
         performSubmitBtn.click()
         time.sleep(3)
-
-
 
 
 
