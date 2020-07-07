@@ -4,6 +4,8 @@ import pytest
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class TestDrivers2():
@@ -11,7 +13,7 @@ class TestDrivers2():
     @pytest.mark.run(order=6)
     def test_setUp(self):
         global driver
-        driver = webdriver.Chrome(executable_path="E:\\Automation\\Webdrivers\\chromedriver\\chromedriver.exe")
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.implicitly_wait(10)
 
 
@@ -55,20 +57,70 @@ class TestDrivers2():
         enterNIC = driver.find_element_by_xpath("//input[@name='nic']")
         enterNIC.send_keys("9200122134V")
 
-    @pytest.mark.run(order=9)
+    @pytest.mark.timeout(10)
+    @pytest.mark.run(order=10)
     def test_upload_licenece_copy_file(self):
         uploadFile = driver.find_element_by_id("name")
         uploadFile.send_keys("C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.png")
-        time.sleep(5)
+        time.sleep(3)
 
-    @pytest.mark.run(order=9)
+    @pytest.mark.skip(reason="licence backcopy is not mendatory")
+    @pytest.mark.run(order=11)
     def test_upload_licenece_backcopy_file(self):
-        uploadFile2 = driver.find_element_by_id("name")
-        uploadFile2.send_keys("C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.pngs")
-        time.sleep(5)
+        uploadFile2 = driver.find_element_by_name("licence_copy")
+        uploadFile2.send_keys("C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.png")
+        time.sleep(3)
+
+    @pytest.mark.run(order=12)
+    def test_enter_vehicle_number(self):
+        enterVehicleNumber = driver.find_element_by_xpath("//input[@name='vehicle_number']")
+        enterVehicleNumber.send_keys("6655663265")
+
+    @pytest.mark.run(order=13)
+    def test_vehicle_owner_radiobtn(self):
+        element = driver.find_element_by_css_selector("input.is_vehicle_owner:nth-child(4)")
+        driver.execute_script("arguments[0].click();", element)
+
+    def test_select_values(self):
+        element = driver.find_element_by_id("owner_id")
+        driver.execute_script("arguments[0].click();", element)
+
+
+
+        # element2 = driver.find_element_by_id("owner_id")
+        # sel = Select(element2)
+        # sel.select_by_index(2)
+        # time.sleep(1)
+        #
+
+
+        # select = Select(element)
+        # select.deselect_by_visible_text(value)
+        #
+        # select_owner_name = driver.find_element_by_id("owner_id")
+        # # select_vehicle_type = driver.find_element_by_name("vehicle_type_id")
+        #
+        # test_select_values(select_owner_name,'milhan')
+        # # test_select_values(select_vehicle_type, 'Van')
 
 
 
 
-    def test_tearDown(self):
-        driver.quit()
+
+
+
+    # @pytest.mark.run(order=14)
+    # def test_select_owner_name(self):
+    #     selectOwnerName = driver.find_elements_by_id("owner_id")
+    #     select = Select(selectOwnerName)
+    #     select.select_by_value("milhan")
+    #     time.sleep(2)
+
+
+
+
+
+
+    #
+    # def test_tearDown(self):
+    #     driver.quit()
