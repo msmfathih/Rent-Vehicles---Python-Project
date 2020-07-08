@@ -98,6 +98,6 @@ class TestDrivers2():
 
 
 
-    #
-    # def test_tearDown(self):
-    #     driver.quit()
+
+    def test_tearDown(self):
+        driver.quit()
