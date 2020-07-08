@@ -50,13 +50,13 @@ class TestDrivers2():
 
         phoneNumber = driver.find_element(By.NAME, 'mobile_number')
         phoneNumber.send_keys("0528542762")
-        email = ""
-        for x in range(1,10):
-            email = "aadil"+str(x)+'@gmail.com'
+        # email = ""
+        # for x in range(1,5):
+        #     email = "ijaz"+str(x)+'@gmail.com'
 
         emailID = driver.find_element(By.XPATH, "//input[@name='email']")
-        # emailID.send_keys("user@gmail1.com")
-        emailID.send_keys(email)
+        emailID.send_keys("user1@gmail1.com")
+        #emailID.send_keys(email)
 
         password = driver.find_element_by_xpath("//input[@name='password']")
         password.send_keys("12346556")
