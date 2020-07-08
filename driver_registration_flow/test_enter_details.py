@@ -83,29 +83,6 @@ class TestDrivers2():
 
     def test_select_values(self):
         element = driver.find_element_by_id("owner_id")
-        driver.execute_script("arguments[0].click();", element)
-
-
-
-        # element2 = driver.find_element_by_id("owner_id")
-        # sel = Select(element2)
-        # sel.select_by_index(2)
-        # time.sleep(1)
-        #
-
-
-        # select = Select(element)
-        # select.deselect_by_visible_text(value)
-        #
-        # select_owner_name = driver.find_element_by_id("owner_id")
-        # # select_vehicle_type = driver.find_element_by_name("vehicle_type_id")
-        #
-        # test_select_values(select_owner_name,'milhan')
-        # # test_select_values(select_vehicle_type, 'Van')
-
-
-
-
 
 
 

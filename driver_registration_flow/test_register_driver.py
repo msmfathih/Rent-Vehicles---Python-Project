@@ -4,13 +4,14 @@ import pytest
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 class TestDrivers():
 
     @pytest.mark.run(order=1)
     def test_setUp(self):
         global driver
-        driver = webdriver.Chrome(executable_path="E:\\Automation\\Webdrivers\\chromedriver\\chromedriver.exe")
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.implicitly_wait(10)
         print("maximized browser")
 

@@ -4,12 +4,9 @@ import pytest
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-import allure
-"""
-Run single file
-py.test -v -s test_admin_navigation2.py
-"""
-0
+
+
+
 class TestExecution():
 
     @pytest.mark.run(order=1)
@@ -19,6 +16,7 @@ class TestExecution():
         driver.implicitly_wait(10)
         # driver.maximize_window()
         print("Maximized browser")
+
 
     @pytest.mark.run(order=2)
     def test_validlogin(self):
@@ -31,6 +29,8 @@ class TestExecution():
             print("Assertion test failed",format(e))
 
         assert "rentvehicles" in driver.current_url
+
+
 
 
     @pytest.mark.run(order=3)
@@ -50,10 +50,10 @@ class TestExecution():
                 break
         time.sleep(2)
 
-    @pytest.mark.run(order=4)
-    @pytest.mark.timeout(10)
-    def test_vahiclePage_section(self):
 
+    @pytest.mark.run(order=4)
+    # @pytest.mark.timeout(10)
+    def test_vahiclePage_section(self):
         clickVehicleDropDown = driver.find_element(By.XPATH, "//p[contains(text(),'Vehicles')]")
         clickVehicleDropDown.click()
         time.sleep(2)
@@ -92,6 +92,7 @@ class TestExecution():
     @pytest.mark.run(order=6)
     def test_verify_ownerName(self):
         assert "vehicle-owners" in driver.current_url
+
 
         verifyVehicleOwnerText = driver.find_element(By.XPATH, "//h1[@class='m-0 text-dark']")
         assert verifyVehicleOwnerText.text == 'Vehicle Owners'

@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 
 
-
 class TestExecution():
 
     @pytest.mark.run(order=1)
@@ -16,6 +15,7 @@ class TestExecution():
         driver.implicitly_wait(10)
         # driver.maximize_window()
         print("Maximized browser")
+
 
     @pytest.mark.run(order=2)
     def test_varifyPageURL(self):
@@ -86,7 +86,6 @@ class TestExecution():
         performSubmitBtn = driver.find_element_by_xpath("//button[@class='btn btn-primary btn-submit']")
         performSubmitBtn.click()
         time.sleep(3)
-
 
 
     def test_tearDown(self):
