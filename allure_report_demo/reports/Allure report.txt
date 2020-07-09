@@ -16,4 +16,6 @@ C:\Users\fathih\PycharmProjects\RentVehicles\allure_report_demo\reports
 
 3. open cmd type: allure serve C:\Users\fathih\PycharmProjects\RentVehicles\allure_report_demo\reports
 
-Report successfully generated to C:\Users\fathih\AppData\Local\Temp\266451175160319930\allure-report
+4.Report successfully generated to C:\Users\fathih\AppData\Local\Temp\266451175160319930\allure-report
+
+5. allure-report copy this folder and paste it and deploy https://app.netlify.com/teams/msmfathih/sites
