@@ -1,6 +1,8 @@
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 import time
 import pytest
+import allure
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
@@ -8,18 +10,27 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class TestDrivers():
 
-
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.run(order=1)
     def test_setUp(self):
         global driver
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.implicitly_wait(10)
         print("maximized browser")
+        #https://confident-dijkstra-ca012d.netlify.app/
 
-
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.run(order=2)
     def test_verify_WebPage(self):
         driver.get("http://rentvehicles.multicompetition.com/login")
+
+        status=driver.find_element_by_xpath("//a[@class='navbar-brand123']").is_displayed()
+        if status==True:
+            assert True
+        else:
+            allure.attach(driver.get_screenshot_as_png(),name="testLoginScreen",
+                          attachment_type=AttachmentType.PNG)
+            assert False
 
         try:
             assert "Rent Vehicles Dashboard" in driver.title
@@ -30,7 +41,7 @@ class TestDrivers():
         assert "rentvehicles" in driver.current_url
 
 
-
+    @allure.severity(allure.severity_level.BLOCKER)
     @pytest.mark.run(order=3)
     def test_invalid_login(self):
         enterEmail = driver.find_element(By.ID, 'email')
@@ -46,14 +57,15 @@ class TestDrivers():
         verifyWrongEmailErrorMessage = driver.find_element(By.XPATH, "//strong[contains(text(),'These credentials do not match our records.')]")
         assert verifyWrongEmailErrorMessage.text == "These credentials do not match our records."
 
-        driver.refresh()
         time.sleep(2)
 
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.run(order=4)
     # @pytest.mark.skip(reason="no way of currently testing this")
     @pytest.mark.timeout(20)
     def test_valid_login(self):
+        driver.refresh()
         enterEmail = driver.find_element(By.ID, 'email')
         enterEmail.send_keys("admin@gmail.com")
 
@@ -64,6 +76,7 @@ class TestDrivers():
         enterLoginBtn.click()
 
 
+    @allure.severity(allure.severity_level.NORMAL)
     # @pytest.mark.skip(reason="no way of currently testing this")
     @pytest.mark.run(order=5)
     def test_navigate_driver_section(self):
@@ -72,7 +85,6 @@ class TestDrivers():
 
         driver.find_element(By.XPATH, "//p[contains(text(),'Register Drivers')]").click()
         time.sleep(2)
-
 
 
 
