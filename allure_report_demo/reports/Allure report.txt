@@ -1,0 +1,19 @@
+https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.0/
+
+1. Download allure zip above url
+2. extract and copy "allure-2.12.0" folder and paste it in c drive
+3. C:\allure-2.13.0\bin  copy this location and goto advance setting pc
+4. goto system variable section and goto Path variable
+5. edit and add new variable and paste C:\allure-2.13.0\bin 
+
+Go to pychar setting--project intepreter add allure-putest package
+
+1.Run this first in terminal
+py.test -v -s --alluredir="C:\Users\fathih\PycharmProjects\RentVehicles\allure_report_demo\reports" test_register_driver.py
+
+2.Generate report folder and copy path
+C:\Users\fathih\PycharmProjects\RentVehicles\allure_report_demo\reports
+
+3. open cmd type: allure serve C:\Users\fathih\PycharmProjects\RentVehicles\allure_report_demo\reports
+
+Report successfully generated to C:\Users\fathih\AppData\Local\Temp\266451175160319930\allure-report

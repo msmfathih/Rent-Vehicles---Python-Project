@@ -1,0 +1,62 @@
+1594182642586	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofileOK8ewX"
+1594182668955	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofile9Uo8KI"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594182680613	Marionette	INFO	Listening on port 60257
+1594182680988	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+1594182715404	Marionette	INFO	Stopped listening on port 60257
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1594182732574	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofile3opvSh"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594182737792	Marionette	INFO	Listening on port 60368
+1594182737896	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+1594182770467	Marionette	INFO	Stopped listening on port 60368
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1594183225894	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofilesC2JLH"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594183231015	Marionette	INFO	Listening on port 60684
+1594183231196	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+1594183261380	Marionette	INFO	Stopped listening on port 60684
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1594183302492	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofileJjikPH"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594183307941	Marionette	INFO	Listening on port 60786
+1594183309812	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+1594183333781	Marionette	INFO	Stopped listening on port 60786
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 13844, Gecko_IOThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+1594183401911	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\fathih\\AppData\\Local\\Temp\\rust_mozprofilepBjApq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594183409181	Marionette	INFO	Listening on port 60913
+1594183409339	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+JavaScript error: http://rentvehicles.multicompetition.com/plugins/sparklines/sparkline.js, line 28: TypeError: this.element is undefined
+1594183439787	Marionette	INFO	Stopped listening on port 60913
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 14464, Gecko_IOThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
