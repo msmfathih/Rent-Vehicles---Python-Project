@@ -24,7 +24,7 @@ class TestDrivers():
     def test_verify_WebPage(self):
         driver.get("http://rentvehicles.multicompetition.com/login")
 
-        status=driver.find_element_by_xpath("//a[@class='navbar-brand123']").is_displayed()
+        status=driver.find_element_by_xpath("//a[@class='navbar-brand']").is_displayed()
         if status==True:
             assert True
         else:

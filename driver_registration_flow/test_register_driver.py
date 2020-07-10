@@ -30,7 +30,6 @@ class TestDrivers():
         assert "rentvehicles" in driver.current_url
 
 
-
     @pytest.mark.run(order=3)
     def test_invalid_login(self):
         enterEmail = driver.find_element(By.ID, 'email')

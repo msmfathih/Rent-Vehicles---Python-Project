@@ -47,7 +47,7 @@ class TestDrivers2():
     @pytest.mark.run(order=9)
     def test_fill_formSection1(self):
         driverName = driver.find_element_by_xpath("//input[@name='name']")
-        driverName.send_keys("testuser")
+        driverName.send_keys("fathih")
 
 
         phoneNumber = driver.find_element(By.NAME, 'mobile_number')
@@ -57,7 +57,7 @@ class TestDrivers2():
         #     email = "ijaz"+str(x)+'@gmail.com'
 
         emailID = driver.find_element(By.XPATH, "//input[@name='email']")
-        emailID.send_keys("user1@gmail1.com")
+        emailID.send_keys("fathih@gmail1.com")
         #emailID.send_keys(email)
 
         password = driver.find_element_by_xpath("//input[@name='password']")
