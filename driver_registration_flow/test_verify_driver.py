@@ -93,8 +93,6 @@ class TestDrivers3():
         print("Driver Phone number is "+elementText)
         time.sleep(3)
 
-        driver.find_element_by_xpath("//a[@id='cancelButton']").click()
-        time.sleep(3)
 
     @pytest.mark.run(order=35)
     def test_logout_app(self):
