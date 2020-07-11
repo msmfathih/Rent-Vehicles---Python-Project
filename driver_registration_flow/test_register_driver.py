@@ -63,7 +63,7 @@ class TestDrivers():
         enterLoginBtn.click()
 
 
-    # @pytest.mark.skip(reason="no way of currently testing this")
+    @pytest.mark.skip(reason="no way of currently testing this")
     @pytest.mark.run(order=5)
     def test_navigate_driver_section(self):
         driver.find_element_by_xpath("/html/body/div[1]/aside[1]/div/div[4]/div/div/nav/ul/li[2]/a").click()
@@ -71,7 +71,6 @@ class TestDrivers():
 
         driver.find_element(By.XPATH, "//p[contains(text(),'Register Drivers')]").click()
         time.sleep(2)
-
 
 
 
