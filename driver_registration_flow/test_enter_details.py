@@ -1,6 +1,8 @@
 from selenium import webdriver
 import time
 import pytest
+import xdist
+import logging
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
@@ -10,7 +12,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 
 class TestDrivers2():
-
 
     @pytest.mark.run(order=6)
     def test_setUp(self):
@@ -41,13 +42,14 @@ class TestDrivers2():
         time.sleep(3)
         driver.find_element(By.XPATH, "//p[contains(text(),'Register Drivers')]").click()
         time.sleep(2)
+        logging.warning("warning message")
 
 
     @pytest.mark.run(order=9)
     def test_fill_formSection1(self):
         driverName = driver.find_element_by_xpath("//input[@name='name']")
         driverName.send_keys("aadil")
-
+        logging.info("info message")
 
         phoneNumber = driver.find_element(By.NAME, 'mobile_number')
         phoneNumber.send_keys("0528542762")
@@ -110,8 +112,7 @@ class TestDrivers2():
     @pytest.mark.run(order=16)
     def test_upload_vehicle_picture(self):
         uploadFile = driver.find_element_by_xpath("//input[@name='vehicle_picture']")
-        uploadFile.send_keys(
-            "C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.png")
+        uploadFile.send_keys("C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.png")
         time.sleep(2)
 
     @pytest.mark.run(order=17)

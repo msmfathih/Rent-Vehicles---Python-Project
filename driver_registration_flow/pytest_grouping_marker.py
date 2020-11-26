@@ -8,7 +8,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class TestDrivers():
 
+    """
+    py.test -m login
+    m = marker login name of the marker
+    """
 
+    @pytest.mark.login
     @pytest.mark.run(order=1)
     def test_setUp(self):
         global driver
@@ -16,7 +21,7 @@ class TestDrivers():
         driver.implicitly_wait(10)
         print("maximized browser")
 
-
+    @pytest.mark.login
     @pytest.mark.run(order=2)
     def test_verify_WebPage(self):
         driver.get("http://rentvehicles.multicompetition.com/login")
@@ -29,7 +34,7 @@ class TestDrivers():
 
         assert "rentvehicles" in driver.current_url
 
-
+    @pytest.mark.login
     @pytest.mark.run(order=3)
     def test_invalid_login(self):
         enterEmail = driver.find_element(By.ID, 'email')
@@ -63,7 +68,8 @@ class TestDrivers():
         enterLoginBtn.click()
 
 
-    @pytest.mark.skip(reason="no way of currently testing this")
+    # @pytest.mark.skip(reason="no way of currently testing this")
+    # @pytest.mark.regression
     @pytest.mark.run(order=5)
     def test_navigate_driver_section(self):
         driver.find_element_by_xpath("/html/body/div[1]/aside[1]/div/div[4]/div/div/nav/ul/li[2]/a").click()

@@ -44,12 +44,10 @@ class TestDrivers():
     @allure.severity(allure.severity_level.BLOCKER)
     @pytest.mark.run(order=3)
     def test_invalid_login(self):
-        enterEmail = driver.find_element(By.ID, 'email')
-        enterEmail.send_keys("admin@gmail.com")
-        time.sleep(2)
 
-        enterPassword = driver.find_element(By.ID, 'password')
-        enterPassword.send_keys("admin@1234")
+        enter_username("admin@gmail.com")
+
+        enter_username("admin@123")
 
         enterLoginBtn = driver.find_element_by_id("btnLogin")
         enterLoginBtn.click()
@@ -66,15 +64,21 @@ class TestDrivers():
     @pytest.mark.timeout(20)
     def test_valid_login(self):
         driver.refresh()
-        enterEmail = driver.find_element(By.ID, 'email')
-        enterEmail.send_keys("admin@gmail.com")
 
-        enterPassword = driver.find_element(By.ID, 'password')
-        enterPassword.send_keys("admin@123")
+        enter_username("admin@gmail.com")
+
+        enter_username("admin@1234")
 
         enterLoginBtn = driver.find_element_by_id("btnLogin")
         enterLoginBtn.click()
 
+    @allure.step("Entering username as {0}")
+    def enter_username(self, username):
+        driver.find_element(By.ID, 'email').send_keys(username)
+
+    @allure.step("Entering password as {0}")
+    def enter_password(self, password):
+        driver.find_element(By.ID, 'password').send_keys(password)
 
 
     @allure.severity(allure.severity_level.NORMAL)

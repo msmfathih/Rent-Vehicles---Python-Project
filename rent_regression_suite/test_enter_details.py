@@ -17,12 +17,15 @@ class TestDrivers2():
     def test_setUp(self):
         global driver
         driver = webdriver.Chrome(ChromeDriverManager().install())
-        #driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
         driver.implicitly_wait(10)
 
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.run(order=7)
     def test_valid_login2(self):
+        global driver
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+
         driver.get("http://rentvehicles.multicompetition.com/login")
         enterEmail = driver.find_element(By.ID, 'email')
         enterEmail.send_keys("admin@gmail.com")
@@ -47,14 +50,14 @@ class TestDrivers2():
     @pytest.mark.run(order=9)
     def test_fill_formSection1(self):
         driverName = driver.find_element_by_xpath("//input[@name='name']")
-        driverName.send_keys("aadil")
+        driverName.send_keys("fathih")
 
 
         phoneNumber = driver.find_element(By.NAME, 'mobile_number')
         phoneNumber.send_keys("0528542762")
 
         emailID = driver.find_element(By.XPATH, "//input[@name='email']")
-        emailID.send_keys("adil16@gmail1.com")
+        emailID.send_keys("fathih12@gmail1.com")
         #emailID.send_keys(email)
 
         password = driver.find_element_by_xpath("//input[@name='password']")
@@ -81,6 +84,7 @@ class TestDrivers2():
             "C://Users//fathih//PycharmProjects//RentVehicles//driver_registration_flow//Image//python.png")
         time.sleep(3)
 
+    @pytest.mark.xfail
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.run(order=12)
     def test_enter_vehicle_number(self):
@@ -123,6 +127,7 @@ class TestDrivers2():
     def test_enter_engine_number(self):
         engine_number = driver.find_element_by_xpath("//input[@name='engine_number']")
         engine_number.send_keys("EP-HQ8165")
+
 
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.run(order=18)

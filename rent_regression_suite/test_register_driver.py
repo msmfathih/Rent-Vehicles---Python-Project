@@ -7,6 +7,9 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from rent_regression_suite.test_enter_details import TestDrivers2
+from rent_regression_suite.test_verify_driver import TestDrivers3
+
 
 class TestDrivers():
 
@@ -31,7 +34,6 @@ class TestDrivers():
             allure.attach(driver.get_screenshot_as_png(),name="testLoginScreen",
                           attachment_type=AttachmentType.PNG)
             assert False
-
         try:
             assert "Rent Vehicles Dashboard" in driver.title
             print("Assertion Test Pass")

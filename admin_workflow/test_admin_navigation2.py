@@ -93,7 +93,6 @@ class TestExecution():
     def test_verify_ownerName(self):
         assert "vehicle-owners" in driver.current_url
 
-
         verifyVehicleOwnerText = driver.find_element(By.XPATH, "//h1[@class='m-0 text-dark']")
         assert verifyVehicleOwnerText.text == 'Vehicle Owners'
 
